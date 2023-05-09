@@ -1,0 +1,95 @@
+<!-- About Page -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- HEADER -->
+    <head>
+        <title>
+            Warren Wright's Personal Webpage
+        </title>
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+    </head>
+    
+    <!-- BODY -->
+    <body>
+        <header>
+            <h1 style="text-align: center;"> About Me! </h1>
+        </header>
+        <div>
+            <p>Here are some facts about me: </p> <br>
+                <button class="accordian">Where I was born</button>
+                <div class="panel">
+                    <table>
+                        <tr>
+                            <th> Fact </th>
+                            <th> Associated Image</th>
+                        </tr>
+                        <tr>
+                            <td> Born in 1993 here in Oklahoma City </td>
+                            <td> <img src="https://oklahomawonders.com/wp-content/uploads/2020/02/shutterstock_759832939.jpg" alt="OKC"
+                                style="width: 300px; height: 250px;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="accordian">Where I completed undergrad</button>
+                <div class="panel">
+                    <table>
+                        <tr>
+                            <th> Fact </th>
+                            <th> Associated Image</th>
+                        </tr>
+                        <tr>
+                            <td> Graduated from OU in 2016 with a degree in petroleum engineering </td>
+                            <td> <img src="https://www.hartenergy.com/sites/default/files/styles/news_article_image/public/image/2019/10/rig-257.jpg?itok=Mq4d7-Jp" alt="Oil Rig"
+                                style="width: 250px; height: 250px;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="accordian">What I do now</button>
+                <div class="panel">
+                    <table>
+                        <tr>
+                            <th> Fact </th>
+                            <th> Associated Image</th>
+                        </tr>
+                        <tr>
+                            <td> Work at Boeing as a Software Engineer</td>
+                            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdL77ctTnsA1ZPKmBhwSV2P4ms0BEmPgO0tg&usqp=CAU" alt="Boeing Plane"></td>
+                        </tr>
+                    </table>
+                </div>
+        </div>
+        <script>
+            var acc = document.getElementsByClassName("accordian");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                panel.style.display = "none";
+                } else {
+                panel.style.display = "block";
+                }
+            });
+            }
+        </script>
+    </body>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="AboutPage.html">About Page</a></li>
+                <li><a href="HometownPage.html">Hometown Page</a></li>
+                <li><a href="HobbyPage.html">Hobby Page</a></li>
+            </ul>
+        </nav>
+        <script>
+            document.write("<p>This page was last modified on: ");
+            document.write(document.lastModified);
+            document.write("</p>");
+        </script>
+    </footer>
+</html>

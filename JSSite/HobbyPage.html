@@ -1,0 +1,90 @@
+<!-- Hobby Page -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- HEADER -->
+    <head>
+        <title>
+            Warren Wright's Personal Webpage
+        </title>
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+    </head>
+    
+    <!-- BODY -->
+    <body>
+        <header>
+            <h1 style="text-align: center;"> My Hobby! </h1>
+            <h2 style="text-align: center;"> Volleyball</h2>
+            <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dm9sbGV5YmFsbHxlbnwwfHwwfHw%3D&w=1000&q=80"
+            alt="Sand Volleyball picture">
+        </header>
+        <div>
+            <p> Some facts about the game of volleyball: </p>
+            <ol>
+                <li> The game was invented in 1895 by William G. Morgan </li> <br>
+                <li> It was added as an Olympic Game in 1964 during the Tokyo Games</li> <br>
+                <li> The average player jumps around 300 times during a match</li><br>
+                <li> The longest match ever played lasted 101 hours</li><br>
+            </ol>
+            <form>
+                What is the average height of a volleyball net in feet?: <input type="text" id="myText">
+                <button type="button" class="Check" onclick="errorMessage()">Check</button>
+            </form>
+            <div>
+            <p id="error"></p>
+            </div>
+        </div>
+        <div>
+            <p>
+                You can learn more about volleyball here at 
+                <a href="https://usavolleyball.org" target="_blank">USAVolleyball.org</a>
+            </p>
+        </div>
+        
+    </body>
+    <script>
+        var input = document.getElementById("myText");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementsByClassName("Check").click();
+            }
+        });
+        
+        function errorMessage() {
+            var error = document.getElementById("error")
+                if (document.getElementById("myText").value == "") {
+                        error.style.display = "block";
+                        error.innerHTML = "This field is required."
+                        error.style.color = "red";
+                } else if (document.getElementById("myText").value != "6.6") {
+                    // Changing content and color of content
+                    error.style.display = "block";
+                    error.innerHTML = "Incorrect. Hint: it is 201cm";
+                    error.style.color = "red";
+                } else if (document.getElementById("myText").value == "6.6") {
+                    error.style.display = "block";
+                    error.innerHTML = "Correct!";
+                    error.style.color = "green";
+                } else {
+                    error.innerHTML = "";
+                }
+            }
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="AboutPage.html">About Page</a></li>
+                <li><a href="HometownPage.html">Hometown Page</a></li>
+                <li><a href="HobbyPage.html">Hobby Page</a></li>
+            </ul>
+        </nav>
+        <script>
+            document.write("<p>This page was last modified on: ");
+            document.write(document.lastModified);
+            document.write("</p>");
+        </script>
+    </footer>
+</html>

@@ -1,0 +1,101 @@
+<!-- Hometown Page -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- HEADER -->
+    <head>
+        <title>
+            Warren Wright's Personal Webpage
+        </title>
+        <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+    </head>
+    
+    <!-- BODY -->
+    <body>
+        <header>
+            <h1 style="text-align: center;"> My Hometown! </h1>
+            <h2 style="text-align: center;">Oklahoma City</h2>
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="https://www.extraspace.com/blog/wp-content/uploads/2019/11/living-in-okc.jpg" alt="Picture 1 of OKC" style="width:100%">
+                  <div class="text">Downtown OKC</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="https://images.squarespace-cdn.com/content/v1/5f63f3f1e4147146d711ca7a/1604422438679-AM1Z5P05SC8EGCIOGQEA/image-asset.jpeg?format=750w" alt="Picture 2 of OKC" style="width:100%">
+                  <div class="text">The Riverwalk</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="https://journalrecord.com/files/2021/08/km-okc-growth.jpg" alt="Picture 3 of OKC" style="width:100%">
+                  <div class="text">Scissortail Park</div>
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+        </header>
+        <div>
+            <p>
+                You can learn more about Oklahoma City here at
+                <a href="https://www.visitokc.com" target="_blank"> VisitOKC.com</a>
+            </p>
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activeDot", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " activeDot";
+            }
+            </script>
+    </body>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="AboutPage.html">About Page</a></li>
+                <li><a href="HometownPage.html">Hometown Page</a></li>
+                <li><a href="HobbyPage.html">Hobby Page</a></li>
+            </ul>
+        </nav>
+        <script>
+            document.write("<p>This page was last modified on: ");
+            document.write(document.lastModified);
+            document.write("</p>");
+        </script>
+    </footer>
+</html>
